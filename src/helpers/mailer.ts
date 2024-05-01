@@ -42,7 +42,8 @@ export const sendMail = async ({email, emailType, userID}: any) => {
             to: email,
             subject: `${emailType} mail`,
             html: `<p>Hello ${user.username}
-                Here is your verify email link <a href={${hashedToken}}>${hashedToken}</a>
+                Here is your verify email link <br>
+                <h4>${process.env.DOMAIN}/verifyemail?token=${hashedToken}</h4>
             </p>`
         };
 
