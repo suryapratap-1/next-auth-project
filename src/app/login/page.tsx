@@ -62,7 +62,7 @@ export default function Login () {
                 <button onClick={signupHandler} className="bg-[#252525] rounded-sm p-2 hover:bg-[#252525aa] cursor-pointer">
                     { buttonDisabled ? "No login" : "Login" }
                 </button>
-                <Link href='/signup'>Don't have an account? Signup here</Link>
+                <Link href='/signup'>Dont have an account? Signup here</Link>
             </div>
         </main>
     )
