@@ -6,13 +6,13 @@ import React, { useEffect, useState } from "react";
 
 export default function verifyEmailPage() {
     // const router = useRouter();
-    const [token, setToken] = useState('');
-    const [verified, setVerified] = useState(false);
-    const [error, setError] = useState(false);
+    const [Token, setToken] = useState('');
+    const [Verified, setVerified] = useState(false);
+    const [Error, setError] = useState(false);
 
     const verifyEmail = async () => {
         try {
-            await axios.post("/api/user/verifyemail", {token});
+            await axios.post("/api/user/verifyemail", {Token});
             setVerified(true);
             setError(false);
         } 
@@ -32,19 +32,19 @@ export default function verifyEmailPage() {
 
     }, [])
     useEffect(() => {
-        if (token.length > 0) {
+        if (Token.length > 0) {
             verifyEmail()
         }
-    }, [token])
+    }, [Token])
     
     
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
 
             <h1 className="text-4xl">Verify Email</h1>
-            <h2 className="p-2 bg-orange-500 text-black">{token ? `${token}` : "no token"}</h2>
+            <h2 className="p-2 bg-orange-500 text-black">{Token ? `${Token}` : "no token"}</h2>
 
-            {verified && (
+            {Verified && (
                 <div>
                     <h2 className="text-2xl">Email Verified</h2>
                     <Link href="/login">
@@ -52,7 +52,7 @@ export default function verifyEmailPage() {
                     </Link>
                 </div>
             )}
-            {error && (
+            {Error && (
                 <div>
                     <h2 className="text-2xl bg-red-500 text-black">Error</h2>
                 </div>
