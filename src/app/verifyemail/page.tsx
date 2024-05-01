@@ -4,7 +4,7 @@ import Link from "next/link";
 // import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
-export default function verifyEmailPage() {
+export default function VerifyEmailPage() {
     // const router = useRouter();
     const [Token, setToken] = useState('');
     const [Verified, setVerified] = useState(false);
